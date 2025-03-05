@@ -89,6 +89,7 @@ bool setPoint(char board[SIZE][SIZE], unsigned int x, unsigned int y, char playe
 }
 
 int main(){
+    srand(time(NULL));
     char board[SIZE][SIZE];
     char winner = ' ';
     char player = 'X';
