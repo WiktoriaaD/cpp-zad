@@ -84,5 +84,3 @@ int main(){
     }while (choice!=4);
     return 0;
 }
-
-//strutil:toUpper
