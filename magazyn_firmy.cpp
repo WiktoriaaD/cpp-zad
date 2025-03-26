@@ -34,18 +34,7 @@ void Addproduct(vector<Product>& products){
 }
 
 
-void loadfromfile(vector<Product>& products){
-    ifstream Magazyn;
-    Magazyn.open("magazyn.txt");
-    if (Magazyn.good()){
-        Product p;
-        int i=0;
-        while (Magazyn >> p.name >> p.price >> p.qty) {
-            products.push_back(p);
-        }
-        Magazyn.close();
-    }
-}
+
 
 void Changeqty(vector<Product>& products){
     string change;
@@ -75,6 +64,19 @@ void savetofile(vector<Product>& products){
     Magazyn.close();
 }
 
+void loadfromfile(vector<Product>& products){
+    ifstream Magazyn;
+    Magazyn.open("magazyn.txt");
+    if (Magazyn.good()){
+        Product p;
+        int i=0;
+        while (Magazyn >> p.name >> p.price >> p.qty) {
+            products.push_back(p);
+        }
+        Magazyn.close();
+    }
+}
+
 void Searchproduct(vector<Product>& products){
     string p;
     cout << "Podaj produkt ktory chcesz wyszukac: ";
@@ -90,6 +92,7 @@ void Searchproduct(vector<Product>& products){
         cout << "Produkt nie istnieje.\n";
     }
 }
+
 
 
 int main(){
