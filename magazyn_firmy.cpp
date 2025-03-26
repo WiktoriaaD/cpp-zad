@@ -33,8 +33,23 @@ void Addproduct(vector<Product>& products){
     products.push_back(add);
 }
 
-
-
+void Delproduct(vector<Product>& products){
+    string change;
+    cout << "Podaj produkt do usuniecia: ";
+    cin>>change;
+    bool istnieje = false;
+    for(int i=0;i<products.size();i++){
+        if(products[i].name==change){
+            products.erase(products.begin()+i);
+            cout << "Produkt zostal usuniety.";
+            istnieje = true;
+            break;
+        }
+    }
+    if (istnieje == false){
+        cout << "Produkt nie istnieje.\n";
+    }    
+}
 
 void Changeqty(vector<Product>& products){
     string change;
@@ -103,9 +118,10 @@ int main(){
         cout << "\nWybierz opcje:\n";
         cout << "1. Wyswietl spis wszystkich produktow.\n";
         cout << "2. Dodaj produkt.\n";
-        cout << "3. Zmień ilość produktu.\n";
-        cout<< "4. Wyszukaj produkt po nazwie.\n";
-        cout<< "5. Zakończ program.\n";
+        cout << "3. Usun produkt.\n";        
+        cout << "4. Zmień ilość produktu.\n";
+        cout<< "5. Wyszukaj produkt po nazwie.\n";
+        cout<< "6. Zakończ program.\n";
         cin >> choice;
         if (choice==1){
             Showproducts(products);
@@ -116,13 +132,17 @@ int main(){
         }
         else if(choice==3)
         {
+            Delproduct(products);
+        }       
+        else if(choice==4)
+        {
             Changeqty(products);
         }
-        else if(choice==4)
+        else if(choice==5)
         {
             Searchproduct(products);
         }
         savetofile(products);
-    }while (choice!=5);
+    }while (choice!=6);
     return 0;
 }
