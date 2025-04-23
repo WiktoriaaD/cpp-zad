@@ -68,8 +68,6 @@ class Firma{
   	        if (it == _mail.end()){
                 throw invalid_argument("Zly format");
             }
-
-            cout<<sum<<endl;
             name=_name;
             nip=_nip;
             date=_date;
@@ -86,3 +84,4 @@ int main(){
     }
     return 0;
 }
+
