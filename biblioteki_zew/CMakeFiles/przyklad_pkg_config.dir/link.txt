@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -pedantic CMakeFiles/przyklad_pkg_config.dir/main.cpp.o -o przyklad_pkg_config  -lcurl 
